@@ -41,11 +41,15 @@ int main() {
         int readListTime = readCodesToList(codesList);
         int readSetTime = readCodesToSet(codesSet);
 
-        result[i][0][0] += readVectorTime;
-        result[i][0][1] += readListTime;
-        result[i][0][2] += readSetTime;
-        
-        cout << "Run " << i << "Read Time [vector]: " << result[i][0][0] 
+        result[i][0][0] = readVectorTime;
+        result[i][0][1] = readListTime;
+        result[i][0][2] = readSetTime;
+
+        result[NUM_OF_RUNS][0][0] += readVectorTime;
+        result[NUM_OF_RUNS][0][1] += readListTime;
+        result[NUM_OF_RUNS][0][2] += readSetTime;
+
+        cout << "Run " << i << " Read Time [vector]: " << result[i][0][0] 
             << ", [list]: " << result[i][0][1] << ", [set]: " << result[i][0][2] << endl;
     }
 
@@ -69,11 +73,15 @@ int main() {
         int sortListTime = sortList(codesList);
         int sortSetTime = sortSet(codesSet);
 
-        result[i][1][0] += sortVectorTime;
-        result[i][1][1] += sortListTime;
-        result[i][1][2] += sortSetTime;
+        result[i][1][0] = sortVectorTime;
+        result[i][1][1] = sortListTime;
+        result[i][1][2] = sortSetTime;
 
-        cout << "Run " << i << "Sort Time [vector]: " << result[i][0][0] 
+        result[NUM_OF_RUNS][1][0] += sortVectorTime;
+        result[NUM_OF_RUNS][1][1] += sortListTime;
+        result[NUM_OF_RUNS][1][2] += sortSetTime;
+
+        cout << "Run " << i << " Sort Time [vector]: " << result[i][0][0] 
             << ", [list]: " << result[i][0][1] << ", [set]: " << result[i][0][2] << endl;
     }
 
@@ -94,11 +102,15 @@ int main() {
         int insertListTime = insertList(codesList);
         int insertSetTime = insertSet(codesSet);
 
-        result[i][2][0] += insertVectorTime;
-        result[i][2][1] += insertListTime;
-        result[i][2][2] += insertSetTime;
+        result[i][2][0] = insertVectorTime;
+        result[i][2][1] = insertListTime;
+        result[i][2][2] = insertSetTime;
 
-        cout << "Run " << i << "Insert Time [vector]: " << result[i][0][0] 
+        result[NUM_OF_RUNS][2][0] += insertVectorTime;
+        result[NUM_OF_RUNS][2][1] += insertListTime;
+        result[NUM_OF_RUNS][2][2] += insertSetTime;
+
+        cout << "Run " << i << " Insert Time [vector]: " << result[i][0][0] 
             << ", [list]: " << result[i][0][1] << ", [set]: " << result[i][0][2] << endl;
     }
 
@@ -119,11 +131,15 @@ int main() {
         int deleteListTime = deleteList(codesList);
         int deleteSetTime = deleteSet(codesSet);
 
-        result[i][3][0] += deleteVectorTime;
-        result[i][3][1] += deleteListTime;
-        result[i][3][2] += deleteSetTime;
+        result[i][3][0] = deleteVectorTime;
+        result[i][3][1] = deleteListTime;
+        result[i][3][2] = deleteSetTime;
 
-        cout << "Run " << i << "Delete Time [vector]: " << result[i][0][0] 
+        result[NUM_OF_RUNS][3][0] += deleteVectorTime;
+        result[NUM_OF_RUNS][3][1] += deleteListTime;
+        result[NUM_OF_RUNS][3][2] += deleteSetTime;
+
+        cout << "Run " << i << " Delete Time [vector]: " << result[i][0][0] 
             << ", [list]: " << result[i][0][1] << ", [set]: " << result[i][0][2] << endl;
     }
 
