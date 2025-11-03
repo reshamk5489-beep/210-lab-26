@@ -32,7 +32,7 @@ int main() {
     list<string> codesList;
     set<string> codesSet;
 
-    int result[NUM_OF_RUNS][NUM_OF_OPERATIONS][NUM_OF_CONTAINERS] = {0};
+    int result[NUM_OF_RUNS + 1][NUM_OF_OPERATIONS][NUM_OF_CONTAINERS] = {0};
 
     // Comment #3: Read codes into each data structure and time the operations
     for (int i = 0; i < NUM_OF_RUNS; i++)
