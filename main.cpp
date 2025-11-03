@@ -48,9 +48,6 @@ int main() {
         result[NUM_OF_RUNS][0][0] += readVectorTime;
         result[NUM_OF_RUNS][0][1] += readListTime;
         result[NUM_OF_RUNS][0][2] += readSetTime;
-
-        cout << "Run " << i << " Read Time [vector]: " << result[i][0][0] 
-            << ", [list]: " << result[i][0][1] << ", [set]: " << result[i][0][2] << endl;
     }
 
     result[NUM_OF_RUNS][0][0] /= NUM_OF_RUNS;
@@ -80,9 +77,6 @@ int main() {
         result[NUM_OF_RUNS][1][0] += sortVectorTime;
         result[NUM_OF_RUNS][1][1] += sortListTime;
         result[NUM_OF_RUNS][1][2] += sortSetTime;
-
-        cout << "Run " << i << " Sort Time [vector]: " << result[i][0][0] 
-            << ", [list]: " << result[i][0][1] << ", [set]: " << result[i][0][2] << endl;
     }
 
     result[NUM_OF_RUNS][1][0] /= NUM_OF_RUNS;
@@ -109,9 +103,6 @@ int main() {
         result[NUM_OF_RUNS][2][0] += insertVectorTime;
         result[NUM_OF_RUNS][2][1] += insertListTime;
         result[NUM_OF_RUNS][2][2] += insertSetTime;
-
-        cout << "Run " << i << " Insert Time [vector]: " << result[i][0][0] 
-            << ", [list]: " << result[i][0][1] << ", [set]: " << result[i][0][2] << endl;
     }
 
     result[NUM_OF_RUNS][2][0] /= NUM_OF_RUNS;
@@ -138,9 +129,6 @@ int main() {
         result[NUM_OF_RUNS][3][0] += deleteVectorTime;
         result[NUM_OF_RUNS][3][1] += deleteListTime;
         result[NUM_OF_RUNS][3][2] += deleteSetTime;
-
-        cout << "Run " << i << " Delete Time [vector]: " << result[i][0][0] 
-            << ", [list]: " << result[i][0][1] << ", [set]: " << result[i][0][2] << endl;
     }
 
     result[NUM_OF_RUNS][3][0] /= NUM_OF_RUNS;
