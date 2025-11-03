@@ -51,6 +51,7 @@ int main() {
     result[0][2] /= NUM_OF_RUNS;
 
     // Comment #4: Print the timing results
+    cout << "Number of simulations: " << NUM_OF_RUNS << endl;
     cout << "Operation    Vector      List       Set" << endl;
     printRightJustified("Read", 9);
     printRightJustified(to_string(result[0][0]), 10); 
@@ -59,36 +60,69 @@ int main() {
     cout << endl;
 
     // Comment #5: Sort the data structures and time the operations
-    int sortVectorTime = sortVector(codesVector);
-    int sortListTime = sortList(codesList);
-    int sortSetTime = sortSet(codesSet);
+    for (int i = 0; i < NUM_OF_RUNS; i++)
+    {
+        int sortVectorTime = sortVector(codesVector);
+        int sortListTime = sortList(codesList);
+        int sortSetTime = sortSet(codesSet);
+
+        result[1][0] += sortVectorTime;
+        result[1][1] += sortListTime;
+        result[1][2] += sortSetTime;
+    }
+
+    result[1][0] /= NUM_OF_RUNS;
+    result[1][1] /= NUM_OF_RUNS;
+    result[1][2] /= NUM_OF_RUNS;
 
     printRightJustified("Sort", 9);
-    printRightJustified(to_string(sortVectorTime), 10); 
-    printRightJustified(to_string(sortListTime), 10); 
-    printRightJustified(to_string(sortSetTime), 10); 
+    printRightJustified(to_string(result[1][0]), 10); 
+    printRightJustified(to_string(result[1][1]), 10); 
+    printRightJustified(to_string(result[1][2]), 10); 
     cout << endl;
 
     // Comment #6: Insert into the data structures and time the operations
-    int insertVectorTime = insertVector(codesVector);
-    int insertListTime = insertList(codesList);
-    int insertSetTime = insertSet(codesSet);
+    for (int i = 0; i < NUM_OF_RUNS; i++)
+    {
+        int insertVectorTime = insertVector(codesVector);
+        int insertListTime = insertList(codesList);
+        int insertSetTime = insertSet(codesSet);
+
+        result[2][0] += insertVectorTime;
+        result[2][1] += insertListTime;
+        result[2][2] += insertSetTime;
+    }
+
+    result[2][0] /= NUM_OF_RUNS;
+    result[2][1] /= NUM_OF_RUNS;
+    result[2][2] /= NUM_OF_RUNS;
 
     printRightJustified("Insert", 9);
-    printRightJustified(to_string(insertVectorTime), 10); 
-    printRightJustified(to_string(insertListTime), 10); 
-    printRightJustified(to_string(insertSetTime), 10); 
+    printRightJustified(to_string(result[2][0]), 10); 
+    printRightJustified(to_string(result[2][1]), 10); 
+    printRightJustified(to_string(result[2][2]), 10); 
     cout << endl;
 
     // Comment #7: Delete from the data structures and time the operations
-    int deleteVectorTime = deleteVector(codesVector);
-    int deleteListTime = deleteList(codesList);
-    int deleteSetTime = deleteSet(codesSet);
+    for (int i = 0; i < NUM_OF_RUNS; i++)
+    {
+        int deleteVectorTime = deleteVector(codesVector);
+        int deleteListTime = deleteList(codesList);
+        int deleteSetTime = deleteSet(codesSet);
+
+        result[3][0] += deleteVectorTime;
+        result[3][1] += deleteListTime;
+        result[3][2] += deleteSetTime;
+    }
+
+    result[3][0] /= NUM_OF_RUNS;
+    result[3][1] /= NUM_OF_RUNS;
+    result[3][2] /= NUM_OF_RUNS;
 
     printRightJustified("Delete", 9);
-    printRightJustified(to_string(deleteVectorTime), 10); 
-    printRightJustified(to_string(deleteListTime), 10); 
-    printRightJustified(to_string(deleteSetTime), 10); 
+    printRightJustified(to_string(result[3][0]), 10); 
+    printRightJustified(to_string(result[3][1]), 10); 
+    printRightJustified(to_string(result[3][2]), 10); 
     cout << endl << endl;
 
     return 0;
