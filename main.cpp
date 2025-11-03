@@ -159,22 +159,22 @@ int main() {
 
 int readCodesToVector(vector<string> &codesVector)
 {
-    // Comment #8: Read codes from file into vector and time the operation
+    // Comment #24: Read codes from file into vector and time the operation
     ifstream fin("Codes.txt");
     string code;
 
     auto start = high_resolution_clock::now();
-    while (fin >> code) // Comment #9: Read each code from the file
+    while (fin >> code) // Comment #25: Read each code from the file
     {
-        codesVector.push_back(code); // Comment #10: Add code to vector
+        codesVector.push_back(code); // Comment #26: Add code to vector
     }
 
     auto end = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(end - start);
 
-    fin.close(); // Comment #11: Close the file
+    fin.close(); // Comment #27: Close the file
 
-    return duration.count(); // Comment #12: Return the time taken in microseconds
+    return duration.count(); // Comment #28: Return the time taken in microseconds
 }
 
 int readCodesToList(list<string> &codesList)
@@ -185,7 +185,7 @@ int readCodesToList(list<string> &codesList)
     auto start = high_resolution_clock::now();
     while (fin >> code)
     {
-        codesList.push_back(code); // Comment #13: Add code to list
+        codesList.push_back(code); // Comment #29: Add code to list
     }
 
     auto end = high_resolution_clock::now();
@@ -204,7 +204,7 @@ int readCodesToSet(set<string> &codesSet)
     auto start = high_resolution_clock::now();
     while (fin >> code)
     {
-        codesSet.insert(code); // Comment #14: Add code to set using insert
+        codesSet.insert(code); // Comment #30: Add code to set using insert
     }
 
     auto end = high_resolution_clock::now();
@@ -217,14 +217,14 @@ int readCodesToSet(set<string> &codesSet)
 
 void printRightJustified(string text, int width) 
 {
-    cout << setw(width) << text; // Comment #15: Print text right-justified with specified width
+    cout << setw(width) << text; // Comment #31: Print text right-justified with specified width
 }
 
 int sortVector(vector<string> &codes)
 {
     auto start = high_resolution_clock::now();
     
-    sort(codes.begin(), codes.end()); // Comment #16: Sort the vector using std::sort
+    sort(codes.begin(), codes.end()); // Comment #32: Sort the vector using std::sort
 
     auto end = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(end - start);
@@ -236,7 +236,7 @@ int sortList(list<string> &codes)
 {
     auto start = high_resolution_clock::now();
     
-    codes.sort(); // Comment #17: Sort the list using its member sort function
+    codes.sort(); // Comment #33: Sort the list using its member sort function
 
     auto end = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(end - start);
@@ -246,7 +246,7 @@ int sortList(list<string> &codes)
 
 int sortSet(set<string> &codes)
 {
-    // Comment #18: No sorting is required for set because item is sorted by default so returning 0
+    // Comment #34: No sorting is required for set because item is sorted by default so returning 0
     return 0;
 }
 
@@ -254,7 +254,7 @@ int insertVector(vector<string> &codesVector)
 {
     auto start = high_resolution_clock::now();
     
-    // Comment #19: Insert "TESTCODE" at index 10000
+    // Comment #35: Insert "TESTCODE" at index 10000
     codesVector.insert(codesVector.begin() + 10000, "TESTCODE"); 
 
     auto end = high_resolution_clock::now();
@@ -267,7 +267,7 @@ int insertList(list<string> &codesList)
 {
     auto start = high_resolution_clock::now();
     
-    // Comment #20: Insert "TESTCODE" at the 10000th position in the list
+    // Comment #36: Insert "TESTCODE" at the 10000th position in the list
     auto it = next(codesList.begin(), 10000);
     codesList.insert(it, "TESTCODE");
 
@@ -281,7 +281,7 @@ int insertSet(set<string> &codesSet)
 {
     auto start = high_resolution_clock::now();
     
-    // Comment #21: Insert "TESTCODE" into the set
+    // Comment #37: Insert "TESTCODE" into the set
     codesSet.insert("TESTCODE");
 
     auto end = high_resolution_clock::now();
@@ -294,7 +294,7 @@ int deleteVector(vector<string> &codesVector)
 {
     auto start = high_resolution_clock::now();
     
-    // Comment #22: Delete the element at index 10000
+    // Comment #38: Delete the element at index 10000
     codesVector.erase(codesVector.begin() + 10000);
 
     auto end = high_resolution_clock::now();
@@ -307,7 +307,7 @@ int deleteList(list<string> &codesList)
 {
     auto start = high_resolution_clock::now();
     
-    // Comment #23: Delete the element at the 10000th position in the list
+    // Comment #39: Delete the element at the 10000th position in the list
     auto it = next(codesList.begin(), 10000);
     codesList.erase(it);
 
@@ -321,7 +321,7 @@ int deleteSet(set<string> &codesSet)
 {
     auto start = high_resolution_clock::now();
     
-    // Comment #24: Delete the element at the 10000th position in the set
+    // Comment #40: Delete the element at the 10000th position in the set
     auto it = next(codesSet.begin(), 10000);
     codesSet.erase(it);
 
