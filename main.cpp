@@ -32,7 +32,7 @@ int main() {
     list<string> codesList;
     set<string> codesSet;
 
-    int result[NUM_OF_OPERATIONS][NUM_OF_CONTAINERS];
+    int result[NUM_OF_OPERATIONS][NUM_OF_CONTAINERS] = {0};
 
     // Comment #3: Read codes into each data structure and time the operations
     for (int i = 0; i < NUM_OF_RUNS; i++)
@@ -52,11 +52,11 @@ int main() {
 
     // Comment #4: Print the timing results
     cout << "Number of simulations: " << NUM_OF_RUNS << endl;
-    cout << "Operation    Vector      List       Set" << endl;
-    printRightJustified("Read", 9);
-    printRightJustified(to_string(result[0][0]), 10); 
-    printRightJustified(to_string(result[0][1]), 10); 
-    printRightJustified(to_string(result[0][2]), 10); 
+    cout << " Operation     Vector       List        Set" << endl;
+    printRightJustified("Read", 10);
+    printRightJustified(to_string(result[0][0]), 11); 
+    printRightJustified(to_string(result[0][1]), 11); 
+    printRightJustified(to_string(result[0][2]), 11); 
     cout << endl;
 
     // Comment #5: Sort the data structures and time the operations
@@ -75,10 +75,10 @@ int main() {
     result[1][1] /= NUM_OF_RUNS;
     result[1][2] /= NUM_OF_RUNS;
 
-    printRightJustified("Sort", 9);
-    printRightJustified(to_string(result[1][0]), 10); 
-    printRightJustified(to_string(result[1][1]), 10); 
-    printRightJustified(to_string(result[1][2]), 10); 
+    printRightJustified("Sort", 10);
+    printRightJustified(to_string(result[1][0]), 11); 
+    printRightJustified(to_string(result[1][1]), 11); 
+    printRightJustified(to_string(result[1][2]), 11); 
     cout << endl;
 
     // Comment #6: Insert into the data structures and time the operations
@@ -97,10 +97,10 @@ int main() {
     result[2][1] /= NUM_OF_RUNS;
     result[2][2] /= NUM_OF_RUNS;
 
-    printRightJustified("Insert", 9);
-    printRightJustified(to_string(result[2][0]), 10); 
-    printRightJustified(to_string(result[2][1]), 10); 
-    printRightJustified(to_string(result[2][2]), 10); 
+    printRightJustified("Insert", 10);
+    printRightJustified(to_string(result[2][0]), 11); 
+    printRightJustified(to_string(result[2][1]), 11); 
+    printRightJustified(to_string(result[2][2]), 11); 
     cout << endl;
 
     // Comment #7: Delete from the data structures and time the operations
@@ -119,10 +119,10 @@ int main() {
     result[3][1] /= NUM_OF_RUNS;
     result[3][2] /= NUM_OF_RUNS;
 
-    printRightJustified("Delete", 9);
-    printRightJustified(to_string(result[3][0]), 10); 
-    printRightJustified(to_string(result[3][1]), 10); 
-    printRightJustified(to_string(result[3][2]), 10); 
+    printRightJustified("Delete", 10);
+    printRightJustified(to_string(result[3][0]), 11); 
+    printRightJustified(to_string(result[3][1]), 11); 
+    printRightJustified(to_string(result[3][2]), 11); 
     cout << endl << endl;
 
     return 0;
@@ -217,8 +217,8 @@ int sortList(list<string> &codes)
 
 int sortSet(set<string> &codes)
 {
-    // Comment #18: No sorting is required for set because item is sorted by default so returning -1
-    return -1;
+    // Comment #18: No sorting is required for set because item is sorted by default so returning 0
+    return 0;
 }
 
 int insertVector(vector<string> &codesVector)
