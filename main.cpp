@@ -7,8 +7,8 @@
 using namespace std;
 using namespace std::chrono;
 
-const int NUM_OF_OPERATIONS = 4;
-const int NUM_OF_CONTAINERS = 3;
+const int NUM_OF_OPERATIONS = 4; // number of operations
+const int NUM_OF_CONTAINERS = 3; // number of containers
 const int NUM_OF_RUNS = 15; // number of runs
 
 // Comment #1: Function prototypes
