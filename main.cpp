@@ -32,7 +32,7 @@ int main() {
     list<string> codesList;
     set<string> codesSet;
 
-    int result[NUM_OF_OPERATIONS][NUM_OF_CONTAINERS] = {0};
+    int result[NUM_OF_RUNS][NUM_OF_OPERATIONS][NUM_OF_CONTAINERS] = {0};
 
     // Comment #3: Read codes into each data structure and time the operations
     for (int i = 0; i < NUM_OF_RUNS; i++)
@@ -41,22 +41,22 @@ int main() {
         int readListTime = readCodesToList(codesList);
         int readSetTime = readCodesToSet(codesSet);
 
-        result[0][0] += readVectorTime;
-        result[0][1] += readListTime;
-        result[0][2] += readSetTime;
+        result[i][0][0] += readVectorTime;
+        result[i][0][1] += readListTime;
+        result[i][0][2] += readSetTime;
     }
 
-    result[0][0] /= NUM_OF_RUNS;
-    result[0][1] /= NUM_OF_RUNS;
-    result[0][2] /= NUM_OF_RUNS;
-
+    result[NUM_OF_CONTAINERS][0][0] /= NUM_OF_RUNS;
+    result[NUM_OF_CONTAINERS][0][1] /= NUM_OF_RUNS;
+    result[NUM_OF_CONTAINERS][0][2] /= NUM_OF_RUNS;
+  
     // Comment #4: Print the timing results
     cout << "Number of simulations: " << NUM_OF_RUNS << endl;
     cout << " Operation     Vector       List        Set" << endl;
     printRightJustified("Read", 10);
-    printRightJustified(to_string(result[0][0]), 11); 
-    printRightJustified(to_string(result[0][1]), 11); 
-    printRightJustified(to_string(result[0][2]), 11); 
+    printRightJustified(to_string(result[][0][0]), 11); 
+    printRightJustified(to_string(result[][0][1]), 11); 
+    printRightJustified(to_string(result[][0][2]), 11); 
     cout << endl;
 
     // Comment #5: Sort the data structures and time the operations
