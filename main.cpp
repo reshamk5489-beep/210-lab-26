@@ -7,11 +7,11 @@
 using namespace std;
 using namespace std::chrono;
 
-const int NUM_OF_OPERATIONS = 4; // number of operations
-const int NUM_OF_CONTAINERS = 3; // number of containers
-const int NUM_OF_RUNS = 15; // number of runs
+const int NUM_OF_OPERATIONS = 4; // Comment #1: Define constant for number of operations.
+const int NUM_OF_CONTAINERS = 3; // Comment #2: Define constant for number of containers.
+const int NUM_OF_RUNS = 15; // Comment #3: Define consant for number of runs.
 
-// Comment #1: Function prototypes
+// Comment #4: Function prototypes
 int readCodesToVector(vector<string> &codesVector);
 int readCodesToList(list<string> &codesList);
 int readCodesToSet(set<string> &codesSet);
@@ -27,34 +27,38 @@ int deleteList(list<string> &codesList);
 int deleteSet(set<string> &codesSet);
 
 int main() {
-    // Comment #2: Define vectors, lists, and sets to hold codes
+    // Comment #5: Define vectors, lists, and sets to hold codes
     vector<string> codesVector;
     list<string> codesList;
     set<string> codesSet;
 
-    int result[NUM_OF_RUNS + 1][NUM_OF_OPERATIONS][NUM_OF_CONTAINERS] = {0}; // 3D array
+    // Comment #6: Define 3D array to store duration of each run and sum of all run per operation and container.
+    int result[NUM_OF_RUNS + 1][NUM_OF_OPERATIONS][NUM_OF_CONTAINERS] = {0};
 
-    // Comment #3: Read codes into each data structure and time the operations
+    // Comment #7: Read codes into each data structure and time the operations for each run.
     for (int i = 0; i < NUM_OF_RUNS; i++)
     {
         int readVectorTime = readCodesToVector(codesVector);
         int readListTime = readCodesToList(codesList);
         int readSetTime = readCodesToSet(codesSet);
 
+        // Comment #8: Storing the result of each run duration for read operation.
         result[i][0][0] = readVectorTime;
         result[i][0][1] = readListTime;
         result[i][0][2] = readSetTime;
 
+        // Comment #9: Storing sum for each run in the extra row for read operation.
         result[NUM_OF_RUNS][0][0] += readVectorTime;
         result[NUM_OF_RUNS][0][1] += readListTime;
         result[NUM_OF_RUNS][0][2] += readSetTime;
     }
 
+    // Comment #10: Calculate the average of all runs for read operation.
     result[NUM_OF_RUNS][0][0] /= NUM_OF_RUNS;
     result[NUM_OF_RUNS][0][1] /= NUM_OF_RUNS;
     result[NUM_OF_RUNS][0][2] /= NUM_OF_RUNS;
   
-    // Comment #4: Print the timing results
+    // Comment #11: Print the timing results
     cout << "Number of simulations: " << NUM_OF_RUNS << endl;
     cout << " Operation     Vector       List        Set" << endl;
     printRightJustified("Read", 10);
@@ -63,22 +67,25 @@ int main() {
     printRightJustified(to_string(result[NUM_OF_RUNS][0][2]), 11); 
     cout << endl;
 
-    // Comment #5: Sort the data structures and time the operations
+    // Comment #12: Sort the data structures and time the operations for each run.
     for (int i = 0; i < NUM_OF_RUNS; i++)
     {
         int sortVectorTime = sortVector(codesVector);
         int sortListTime = sortList(codesList);
         int sortSetTime = sortSet(codesSet);
 
+        // Comment #13: Storing the result of each run duration for sort operation.
         result[i][1][0] = sortVectorTime;
         result[i][1][1] = sortListTime;
         result[i][1][2] = sortSetTime;
 
+        // Comment #14: Storing sum for each run in the extra row for sort operation.
         result[NUM_OF_RUNS][1][0] += sortVectorTime;
         result[NUM_OF_RUNS][1][1] += sortListTime;
         result[NUM_OF_RUNS][1][2] += sortSetTime;
     }
 
+    // Comment #15: Calculate the average of all runs for sort operation.
     result[NUM_OF_RUNS][1][0] /= NUM_OF_RUNS;
     result[NUM_OF_RUNS][1][1] /= NUM_OF_RUNS;
     result[NUM_OF_RUNS][1][2] /= NUM_OF_RUNS;
@@ -89,22 +96,25 @@ int main() {
     printRightJustified(to_string(result[NUM_OF_RUNS][1][2]), 11); 
     cout << endl;
 
-    // Comment #6: Insert into the data structures and time the operations
+    // Comment #16: Insert into the data structures and time the operations for each run.
     for (int i = 0; i < NUM_OF_RUNS; i++)
     {
         int insertVectorTime = insertVector(codesVector);
         int insertListTime = insertList(codesList);
         int insertSetTime = insertSet(codesSet);
 
+        // Comment #17: Storing the result of each run duration for insert operation.
         result[i][2][0] = insertVectorTime;
         result[i][2][1] = insertListTime;
         result[i][2][2] = insertSetTime;
 
+        // Comment #18: Storing sum for each run in the extra row for insert operation.
         result[NUM_OF_RUNS][2][0] += insertVectorTime;
         result[NUM_OF_RUNS][2][1] += insertListTime;
         result[NUM_OF_RUNS][2][2] += insertSetTime;
     }
 
+    // Comment #19: Calculate the average of all runs for insert operation.
     result[NUM_OF_RUNS][2][0] /= NUM_OF_RUNS;
     result[NUM_OF_RUNS][2][1] /= NUM_OF_RUNS;
     result[NUM_OF_RUNS][2][2] /= NUM_OF_RUNS;
@@ -115,22 +125,25 @@ int main() {
     printRightJustified(to_string(result[NUM_OF_RUNS][2][2]), 11); 
     cout << endl;
 
-    // Comment #7: Delete from the data structures and time the operations
+    // Comment #20: Delete from the data structures and time the operations for each run.
     for (int i = 0; i < NUM_OF_RUNS; i++)
     {
         int deleteVectorTime = deleteVector(codesVector);
         int deleteListTime = deleteList(codesList);
         int deleteSetTime = deleteSet(codesSet);
 
+        // Comment #21: Storing the result of each run duration for delete operation.
         result[i][3][0] = deleteVectorTime;
         result[i][3][1] = deleteListTime;
         result[i][3][2] = deleteSetTime;
 
+        // Comment #22: Storing sum for each run in the extra row for delete operation.
         result[NUM_OF_RUNS][3][0] += deleteVectorTime;
         result[NUM_OF_RUNS][3][1] += deleteListTime;
         result[NUM_OF_RUNS][3][2] += deleteSetTime;
     }
 
+    // Comment #23: Calculate the average of all runs for delete operation.
     result[NUM_OF_RUNS][3][0] /= NUM_OF_RUNS;
     result[NUM_OF_RUNS][3][1] /= NUM_OF_RUNS;
     result[NUM_OF_RUNS][3][2] /= NUM_OF_RUNS;
