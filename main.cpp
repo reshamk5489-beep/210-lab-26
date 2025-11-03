@@ -9,7 +9,7 @@ using namespace std::chrono;
 
 const int NUM_OF_OPERATIONS = 4;
 const int NUM_OF_CONTAINERS = 3;
-const int NUM_OF_RUNS = 15;
+const int NUM_OF_RUNS = 15; // number of runs
 
 // Comment #1: Function prototypes
 int readCodesToVector(vector<string> &codesVector);
